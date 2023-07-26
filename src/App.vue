@@ -130,6 +130,7 @@ body {
 	background: $light;
 	color: $dark;
   
+
   section {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
@@ -170,21 +171,18 @@ body {
   }
 }
 
-
-.create-todo input[type="text"] {
-	display: block;
-	width: 100%;
-	font-size: 1.125rem;
-	padding: 1rem 1.5rem;
-	color: $dark;
-	background-color: #FFF;
-	border-radius: 0.5rem;
-	box-shadow: $shadow;
-	margin-bottom: 1.5rem;
-}
-
 .create-todo {
-
+	input[type="text"] {
+		display: block;
+		width: 100%;
+		font-size: 1.125rem;
+		padding: 1rem 1.5rem;
+		color: $dark;
+		background-color: #FFF;
+		border-radius: 0.5rem;
+		box-shadow: $shadow;
+		margin-bottom: 1.5rem;
+	}
   .options {
 	  display: grid;
 	  grid-template-columns: repeat(2, 1fr);
@@ -205,7 +203,6 @@ body {
   }
 }
 
-
 input[type="radio"],
 input[type="checkbox"] {
 	display: none;
@@ -218,25 +215,27 @@ input[type="checkbox"] {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 2px solid $business;
+	border: 2px solid $personal;
 	box-shadow: $business-glow;
 
-  &:after {
-	  content: "";
-	  display: block;
-	  opacity: 0;
-	  width: 0px;
-	  height: 0px;
-	  background-color: $business;
-	  box-shadow: $business-glow;
-	  border-radius: 50%;
-	  transition: 0.2s ease-in-out;
-  }
 
-  .business{
+	&:after {
+	 	content: "";
+  	display: block;
+  	opacity: 0;
+	  width: 0px;
+	 	height: 0px;
+  	background-color: $business;
+	 	box-shadow: $business-glow;
+  	border-radius: 50%;
+  	transition: 0.2s ease-in-out;
+  }
+}
+
+	.business{
     border-color: $business;
     box-shadow: $business-glow;
-  }
+	
   .personal {
 	  border-color: $personal;
 	  box-shadow: $personal-glow;
@@ -245,7 +244,7 @@ input[type="checkbox"] {
 	  background-color: $personal;
 	  box-shadow: $personal-glow;
   }
-  }
+  } 
 }
 
 
@@ -266,7 +265,7 @@ input:checked ~ .bubble::after {
 	width: 100%;
 	font-size: 1.125rem;
 	padding: 1rem 1.5rem;
-	color: #c00909;
+	color: #fff;
 	background-color: $primary;
 	border-radius: 0.5rem;
 	box-shadow: $personal-glow;
@@ -277,65 +276,73 @@ input:checked ~ .bubble::after {
 }
 }
 
-.todo-list .list {
-	margin: 1rem 0;
-} 
+.todo-list{
 
-.todo-list .todo-item {
-	display: flex;
-	align-items: center;
-	background-color: #FFF;
-	padding: 1rem;
-	border-radius: 0.5rem;
-	box-shadow: $shadow;
-	margin-bottom: 1rem;
+	.list {
+		margin: 1rem 0;
+	} 
+
+	.todo-item {
+		display: flex;
+		align-items: center;
+		background-color: #FFF;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		box-shadow: $shadow;
+		margin-bottom: 1rem;
+
+		label {
+	 		display: block;
+	 		margin-right: 1rem;
+	 		cursor: pointer;
+ 		}
+		 
+		 .actions {
+			 display: flex;
+			 align-items: center;
+
+			  button {
+				 display: block;
+				 padding: 0.5rem;
+				 border-radius: 0.25rem;
+				 color: #FFF;
+				 cursor: pointer;
+				 transition: 0.2s ease-in-out;
+
+				&:hover {
+					opacity: 0.75;
+				}
+			 }
+			 
+			 
+				.edit {
+				 margin-right: 0.5rem;
+				 background-color: $primary;
+			 	}
+			 
+				.delete {
+					background-color: $danger;
+			 	}
+			 
+			}
+
+			 .todo-content input {
+				text-decoration: line-through;
+				color: $grey;
+	}
 }
 
-.todo-item label {
-	display: block;
-	margin-right: 1rem;
-	cursor: pointer;
 }
-
-.todo-item .todo-content {
+.todo-content {
 	flex: 1 1 0%;
+	
+	input {
+		color: $dark;
+		font-size: 1.125rem;
+	}
 }
 
-.todo-item .todo-content input {
-	color: $dark;
-	font-size: 1.125rem;
-}
 
-.todo-item .actions {
-	display: flex;
-	align-items: center;
-}
 
-.todo-item .actions button {
-	display: block;
-	padding: 0.5rem;
-	border-radius: 0.25rem;
-	color: #FFF;
-	cursor: pointer;
-	transition: 0.2s ease-in-out;
-}
-
-.todo-item .actions button:hover {
-	opacity: 0.75;
-}
-
-.todo-item .actions .edit {
-	margin-right: 0.5rem;
-	background-color: $primary;
-}
-
-.todo-item .actions .delete {
-	background-color: $danger;
-}
-
-.todo-item.done .todo-content input {
-	text-decoration: line-through;
-	color: $grey;
-}
 
 </style>
