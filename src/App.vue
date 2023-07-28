@@ -124,25 +124,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-$primary: #ea40a4;
-$business: #3a82ee;
-$personal: $primary;
-$light: #eee;
-$grey: #888;
-$dark: #313154;
-$danger: #ff5b57;
-
-$shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-$business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
-$personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "montserrat", sans-serif;
-}
 
 input:not([type="radio"]):not([type="checkbox"]),
 button {
